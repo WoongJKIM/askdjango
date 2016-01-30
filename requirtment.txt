@@ -1,0 +1,6 @@
+#프로젝트에 필요한 API 버젼과 API를 한번에 출력하기 위해 사용
+#cmd 창 pip install -r requirment.txt
+
+django==1.9.1
+django-bootstrap3
+django-debug-toolbar

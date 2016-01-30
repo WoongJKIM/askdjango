@@ -1,0 +1,24 @@
+{# blog/templates/blog/post_detail.html #}
+
+<h1>{{post.title}}</h1>
+
+{{post.content|linebreaks}}
+
+<hr/>
+
+<a href="{% url "blog.views.comment_new" post.pk %}">댓글달기</a>
+
+<ul>
+    {% for comment in post.comments.all %}
+        {% if comment.image %}
+            {# coment.image.path #}
+            <li><img src="{{ comment.image.url }}"/></li>
+        {% else %}
+            <li>이미지 없음</li>
+        {% endif %}
+
+        <li>{{comment.message}}</li>
+    {% empty %}
+        <li>등록된 댓글이 없습니다</li>
+    {%endfor%}
+</ul>
